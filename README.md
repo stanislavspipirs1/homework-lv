@@ -7,9 +7,9 @@ For IntelliJ: Settings -> Build, Execution, Deployment -> Compiler -> Annotation
 Will run on 8080 port by default. Port can be changed in application.properties.
 
 URLs
-http://localhost:8080/create
-http://localhost:8080/extend
-http://localhost:8080/loans/{username}
+http://localhost:8080/loans POST Creates loan
+http://localhost:8080/extend/{id} POST Extends loan
+http://localhost:8080/loans/{username} GET Lists user's loans
 
 When listing loans sorted by 'created' field.
 
