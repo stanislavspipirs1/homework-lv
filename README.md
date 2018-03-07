@@ -1,23 +1,18 @@
 #homework-lv
 
-##Goal
-- Create a simple micro-lending rest api app similar to one of our existing products.
+Just run HomeworkApplication.java.
+Should add Lombok plugin and enable annotation processing.
+For IntelliJ: Settings -> Build, Execution, Deployment -> Compiler -> Annotation Processors -> Enable annotation processing
 
-##Business requirements
-- Applying for loan through the api - passing term and amount.
-- Loan application risk analysis performed if:
-  - the attempt to take loan is made after 00:00 with max possible amount.
-  - reached max applications (e.g. 3) per day from a single IP.
-- Loan can be extended, interest factor per week is 1.5.
-- User can view their loans, including extensions.
+Will run on 8080 port by default. Port can be changed in application.properties.
 
-##Technical requirements
-- Backend in Java, XML-less Spring, Hibernate.
-- Code quality (both production and test)
-- How simple it is to run the application (embedded DB/embedded container)
-- Use of spring-boot provided in this template is not obligatory, you are free to choose any other framework.
+URLs
+http://localhost:8080/create
+http://localhost:8080/extend
+http://localhost:8080/loans/{username}
 
-##What gets evaluated
-- Requirements are met
-- Code quality (both production and test)
-- How simple it is to run the application (embedded DB/embedded container)
+When listing loans sorted by 'created' field.
+
+For the sake of simplicity there is no logging, no user authentication (just username is passed by user), no exception handling and custom error page (just default Spring error page).
+
+Just run src/integration_test/RunCukesTest.groovy to run integration tests (REST API tests) or run 'gradle cucumber'
